@@ -1,0 +1,41 @@
+{
+  "demo": true,
+  "web3formsKey": "",
+  "reservationUrl": "",
+  "name": "Gusto Campano",
+  "legalName": "Ristorante Pizzeria Gusto Campano",
+  "tagline": "Il vero gusto campano",
+  "taglineDe": "Der echte Geschmack Kampaniens – in Zürich-Affoltern",
+  "blurb": "Neapolitanische Pizza aus dem Holzofen, Pasta und Klassiker aus Kampanien. Familiär geführt an der Schauenbergstrasse in Zürich-Affoltern.",
+  "founder": "Familie Visone",
+  "foundedYear": "2023",
+  "region": "Zürich-Affoltern, Zürich-Nord",
+  "address": {
+    "street": "Schauenbergstrasse 8",
+    "zip": "8046",
+    "city": "Zürich"
+  },
+  "phoneDisplay": "044 371 55 25",
+  "phoneTel": "+41443715525",
+  "email": "info@gusto-campano.ch",
+  "instagram": "https://www.instagram.com/gustocampanozurich/",
+  "instagramHandle": "@gustocampanozurich",
+  "mapQuery": "Schauenbergstrasse 8, 8046 Zürich",
+  "mapEmbed": "https://www.openstreetmap.org/export/embed.html?bbox=8.4930%2C47.4120%2C8.5190%2C47.4250&layer=mapnik&marker=47.4185%2C8.5058",
+  "themeColor": "#17100C",
+  "hours": [
+    { "day": "Montag", "value": "geschlossen" },
+    { "day": "Dienstag", "value": "11:30 – 14:00 · 17:30 – 23:00" },
+    { "day": "Mittwoch", "value": "11:30 – 14:00 · 17:30 – 23:00" },
+    { "day": "Donnerstag", "value": "11:30 – 14:00 · 17:30 – 23:00" },
+    { "day": "Freitag", "value": "11:30 – 14:00 · 17:30 – 23:30" },
+    { "day": "Samstag", "value": "17:00 – 23:30" },
+    { "day": "Sonntag", "value": "17:00 – 22:00" }
+  ],
+  "kitchenNote": "Warme Küche bis eine halbe Stunde vor Schluss. Für Gruppen ab 8 Personen bitten wir um Voranmeldung.",
+  "facts": [
+    { "value": "48 h", "label": "Teigreifung" },
+    { "value": "485 °C", "label": "Holzofen" },
+    { "value": "70 Sek.", "label": "im Feuer" }
+  ]
+}

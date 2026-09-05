@@ -1,0 +1,20 @@
+{
+  "intro": "Hinweis für die Demo: Die Bilder stammen aus frei lizenzierten Beständen und werden später über das Redaktionssystem durch eigene Aufnahmen des Betriebs ersetzt.",
+  "images": [
+    { "src": "hero-forno.jpg", "alt": "Feuer im gemauerten Holzofen", "span": "wide" },
+    { "src": "pizza-margherita.jpg", "alt": "Margherita mit leopardgeflecktem Cornicione", "span": "tall" },
+    { "src": "sala-1.jpg", "alt": "Warm beleuchteter Gastraum am Abend", "span": "" },
+    { "src": "impasto.jpg", "alt": "Hände beim Ausziehen des Teigs", "span": "" },
+    { "src": "pizza-diavola.jpg", "alt": "Diavola mit scharfer Salami und 'Nduja", "span": "" },
+    { "src": "tavola.jpg", "alt": "Gedeckter Tisch mit Weingläsern", "span": "wide" },
+    { "src": "pizza-bufala.jpg", "alt": "Büffelmozzarella DOP mit Basilikum", "span": "tall" },
+    { "src": "sala-2.jpg", "alt": "Tische entlang der Wand", "span": "" },
+    { "src": "pasta-carbonara.jpg", "alt": "Pasta auf weissem Teller", "span": "" },
+    { "src": "forno-pizza.jpg", "alt": "Pizza im Feuer des Holzofens", "span": "" },
+    { "src": "limoni.jpg", "alt": "Zitronen aus Amalfi in Steinkörben", "span": "" },
+    { "src": "sala-3.jpg", "alt": "Holztische und Stühle im Gastraum", "span": "wide" },
+    { "src": "pizza-verdure.jpg", "alt": "Pizza Ortolana mit Grillgemüse", "span": "tall" },
+    { "src": "dolce-tiramisu.jpg", "alt": "Hausgemachtes Tiramisù", "span": "" },
+    { "src": "costiera.jpg", "alt": "Küste Kampaniens", "span": "" }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "intro": "Unsere Karte wechselt mit den Lieferungen aus Kampanien. Was hier steht, kochen und backen wir jeden Abend frisch – die Pizza im Holzofen, die Pasta nach den Rezepten unserer Familie.",
+  "allergyNote": "Angaben zu Allergenen und Zusatzstoffen erhalten Sie auf Nachfrage bei unserem Personal. Alle Preise in Schweizer Franken, inkl. MwSt.",
+  "categories": [
+    {
+      "id": "antipasti",
+      "name": "Antipasti",
+      "subtitle": "Zum Ankommen",
+      "dishes": [
+        {
+          "name": "Bruschetta del Vesuvio",
+          "sub": "pomodorini del piennolo, aglio, basilico",
+          "desc": "Geröstetes Sauerteigbrot mit Kirschtomaten vom Vesuv, Knoblauch, Basilikum und Olivenöl extra vergine.",
+          "price": "12.50",
+          "tags": ["vegetariana"],
+          "heat": 0,
+          "image": "antipasti.jpg",
+          "signature": false
+        },
+        {
+          "name": "Bufala & Prosciutto",
+          "sub": "mozzarella di bufala campana DOP, prosciutto di Parma 18 mesi",
+          "desc": "Ein Ball Büffelmozzarella DOP aus Kampanien mit 18 Monate gereiftem Parmaschinken.",
+          "price": "18.50",
+          "tags": ["classica"],
+          "heat": 0,
+          "image": "pizza-bufala.jpg",
+          "signature": true
+        },
+        {
+          "name": "Polpette al ragù",
+          "sub": "polpette di manzo, ragù napoletano, pane",
+          "desc": "Rindfleischbällchen, langsam geschmort im neapolitanischen Ragù, mit Brot zum Tunken.",
+          "price": "14.50",
+          "tags": [],
+          "heat": 0,
+          "image": "pasta-carbonara.jpg",
+          "signature": false
+        },
+        {
+          "name": "Alici marinate",
+          "sub": "acciughe del Cantabrico, limone, prezzemolo",
+          "desc": "In Zitrone marinierte Sardellenfilets mit Petersilie und einem Spritzer Olivenöl.",
+          "price": "13.50",
+          "tags": ["mare"],
+          "heat": 0,
+          "image": "antipasti.jpg",
+          "signature": false
+        },
+        {
+          "name": "Frittatina di pasta",
+          "sub": "bucatini, besciamella, provola, piselli",
+          "desc": "Neapolitanischer Strassenklassiker: panierte und frittierte Nudel-Béchamel-Laibchen mit Räucherprovola und Erbsen.",
+          "price": "9.50",
+          "tags": ["vegetariana"],
+          "heat": 0,
+          "image": "pasta-pesto.jpg",
+          "signature": false
+        }
+      ]
+    },
+    {
+      "id": "pizze-rosse",
+      "name": "Pizze Rosse",
+      "subtitle": "Mit San-Marzano-Tomate, 48 Stunden gereifter Teig",
+      "dishes": [
+        {
+          "name": "Marinara",
+          "sub": "pomodoro San Marzano, aglio, origano, basilico",
+          "desc": "Die ältere Schwester der Margherita – ganz ohne Käse. Tomate, Knoblauch, Oregano, Basilikum, Olivenöl.",
+          "price": "15.50",
+          "tags": ["classica", "vegetariana"],
+          "heat": 0,
+          "image": "pizza-marinara.jpg",
+          "signature": false
+        },
+        {
+          "name": "Margherita",
+          "sub": "pomodoro San Marzano, fior di latte, basilico",
+          "desc": "San-Marzano-Tomate, Fior di Latte aus Agerola, frisches Basilikum, Olivenöl extra vergine.",
+          "price": "18.50",
+          "tags": ["classica", "vegetariana"],
+          "heat": 0,
+          "image": "pizza-margherita.jpg",
+          "signature": true
+        },
+        {
+          "name": "Margherita con Bufala",
+          "sub": "pomodoro San Marzano, mozzarella di bufala DOP, basilico",
+          "desc": "Wie die Margherita, aber mit Büffelmozzarella DOP, erst nach dem Ofen aufgelegt.",
+          "price": "22.50",
+          "tags": ["classica", "vegetariana"],
+          "heat": 0,
+          "image": "pizza-napoli.jpg",
+          "signature": false
+        },
+        {
+          "name": "Diavola",
+          "sub": "pomodoro, fior di latte, salame piccante, 'nduja",
+          "desc": "Scharfe Salami und 'Nduja aus Kalabrien, dazu ein Faden Chili-Honig. Für alle, die es gern deutlich haben.",
+          "price": "21.50",
+          "tags": ["classica"],
+          "heat": 3,
+          "image": "pizza-diavola.jpg",
+          "signature": true
+        },
+        {
+          "name": "Capricciosa",
+          "sub": "pomodoro, fior di latte, prosciutto cotto, funghi, carciofi, oliva",
+          "desc": "Kochschinken, Champignons, Artischocken und Olive – klassisch in vier Vierteln aufgelegt.",
+          "price": "23.50",
+          "tags": ["classica"],
+          "heat": 0,
+          "image": "pizza-verdure.jpg",
+          "signature": false
+        },
+        {
+          "name": "Napoli",
+          "sub": "pomodoro, fior di latte, acciughe, capperi, origano",
+          "desc": "Sardellen aus Cetara, Kapern von Salina, Oregano. Salzig, kräftig, echt neapolitanisch.",
+          "price": "20.50",
+          "tags": ["classica", "mare"],
+          "heat": 0,
+          "image": "pizza-napoli.jpg",
+          "signature": false
+        }
+      ]
+    },
+    {
+      "id": "pizze-bianche",
+      "name": "Pizze Bianche",
+      "subtitle": "Ohne Tomate – dafür mit Charakter",
+      "dishes": [
+        {
+          "name": "Ortolana",
+          "sub": "fior di latte, zucchine, melanzane, peperoni, basilico",
+          "desc": "Am Grill gezogenes Sommergemüse auf Fior di Latte, ohne Tomate. Zum Schluss frisches Basilikum.",
+          "price": "20.50",
+          "tags": ["bianca", "vegetariana"],
+          "heat": 0,
+          "image": "pizza-verdure.jpg",
+          "signature": false
+        },
+        {
+          "name": "Mortazza",
+          "sub": "fior di latte, mortadella, pistacchio di Bronte, stracciatella",
+          "desc": "Nach dem Ofen belegt: Mortadella in Falten, Stracciatella, ein Pesto aus Bronte-Pistazien.",
+          "price": "23.50",
+          "tags": ["bianca"],
+          "heat": 0,
+          "image": "pizza-bianca.jpg",
+          "signature": true
+        },
+        {
+          "name": "Amalfitana",
+          "sub": "fior di latte, limone d'Amalfi, gamberi, rucola",
+          "desc": "Fior di Latte, dünne Scheiben Amalfi-Zitrone, sautierte Garnelen und Rucola. Frisch wie die Küste.",
+          "price": "25.50",
+          "tags": ["bianca", "mare"],
+          "heat": 1,
+          "image": "pizza-hand.jpg",
+          "signature": false
+        },
+        {
+          "name": "Quattro Formaggi",
+          "sub": "fior di latte, provolone del Monaco, gorgonzola, pecorino",
+          "desc": "Vier Käse aus Süditalien, dazu Kastanienhonig aus dem Cilento.",
+          "price": "22.50",
+          "tags": ["bianca", "vegetariana"],
+          "heat": 0,
+          "image": "pizza-bianca.jpg",
+          "signature": false
+        }
+      ]
+    },
+    {
+      "id": "pizze-territorio",
+      "name": "Pizze del Territorio",
+      "subtitle": "Was die Saison und die Lieferung aus Kampanien hergeben",
+      "dishes": [
+        {
+          "name": "Montanara Starita",
+          "sub": "prima fritta, poi al forno – pomodoro, provola, pecorino, basilico",
+          "desc": "Der Teig wird erst kurz frittiert, dann im Holzofen fertig gebacken. Aussen zart, innen wolkig.",
+          "price": "19.50",
+          "tags": ["vegetariana"],
+          "heat": 0,
+          "image": "forno-pizza.jpg",
+          "signature": true
+        },
+        {
+          "name": "Salsiccia e Friarielli",
+          "sub": "fior di latte, salsiccia di maiale, friarielli",
+          "desc": "Die Pizza, die in Neapel jeder bestellt: hausgemachte Salsiccia und Friarielli (neapolitanischer Stängelkohl).",
+          "price": "23.50",
+          "tags": [],
+          "heat": 1,
+          "image": "pizza-diavola.jpg",
+          "signature": false
+        },
+        {
+          "name": "Pizza del Piennolo",
+          "sub": "pomodorino giallo e rosso del Vesuvio, fior di latte, basilico",
+          "desc": "Gelbe und rote Piennolo-Kirschtomaten vom Vesuvhang, roh und geschmort zugleich aufgelegt.",
+          "price": "21.50",
+          "tags": ["vegetariana"],
+          "heat": 0,
+          "image": "pizza-margherita.jpg",
+          "signature": false
+        },
+        {
+          "name": "Genovese in Pizza",
+          "sub": "cipolla ramata di Montoro brasata 6 ore, provola, pepe",
+          "desc": "Sechs Stunden geschmorte Montoro-Zwiebeln – das Herz der neapolitanischen Genovese – auf der Pizza.",
+          "price": "24.50",
+          "tags": [],
+          "heat": 0,
+          "image": "pizza-napoli.jpg",
+          "signature": false
+        }
+      ]
+    },
+    {
+      "id": "paste",
+      "name": "Paste & Primi",
+      "subtitle": "Nach den Rezepten der Familie",
+      "dishes": [
+        {
+          "name": "Spaghetti alle Vongole",
+          "sub": "spaghetti di Gragnano IGP, vongole veraci, aglio, prezzemolo",
+          "desc": "Gragnano-Spaghetti mit frischen Venusmuscheln, Knoblauch, Petersilie, einem Schuss Weisswein.",
+          "price": "28.50",
+          "tags": ["mare"],
+          "heat": 0,
+          "image": "pasta-pesto.jpg",
+          "signature": false
+        },
+        {
+          "name": "Paccheri alla Genovese",
+          "sub": "paccheri, ragù di cipolle e manzo, pecorino",
+          "desc": "Der stille Klassiker Neapels: ein Ragù, das fast nur aus Zwiebeln und Rind besteht, stundenlang gezogen.",
+          "price": "26.50",
+          "tags": [],
+          "heat": 0,
+          "image": "pasta-carbonara.jpg",
+          "signature": true
+        },
+        {
+          "name": "Gnocchi alla Sorrentina",
+          "sub": "gnocchi di patate, pomodoro, fior di latte, basilico",
+          "desc": "Hausgemachte Kartoffelgnocchi, im Tontopf mit Tomate und Fior di Latte überbacken.",
+          "price": "24.50",
+          "tags": ["vegetariana"],
+          "heat": 0,
+          "image": "pasta-pesto.jpg",
+          "signature": false
+        },
+        {
+          "name": "Ziti alla Napoletana",
+          "sub": "ziti spezzati, ragù napoletano di 4 ore, ricotta",
+          "desc": "Von Hand gebrochene Ziti im vierstündigen Sonntagsragù, mit einem Löffel Ricotta.",
+          "price": "25.50",
+          "tags": [],
+          "heat": 0,
+          "image": "pasta-carbonara.jpg",
+          "signature": false
+        }
+      ]
+    },
+    {
+      "id": "secondi",
+      "name": "Secondi & Contorni",
+      "subtitle": "Aus Pfanne und Ofen",
+      "dishes": [
+        {
+          "name": "Parmigiana di Melanzane",
+          "sub": "melanzane, pomodoro, fior di latte, parmigiano, basilico",
+          "desc": "Auberginen in Schichten mit Tomate und Käse gebacken. Als Vorspeise oder mit Brot als Hauptgang.",
+          "price": "19.50",
+          "tags": ["vegetariana"],
+          "heat": 0,
+          "image": "pizza-verdure.jpg",
+          "signature": false
+        },
+        {
+          "name": "Baccalà alla Napoletana",
+          "sub": "baccalà, pomodoro, olive di Gaeta, capperi, pinoli",
+          "desc": "Stockfisch im Tomatensugo mit Gaeta-Oliven, Kapern und Pinienkernen. Ein Winter-Klassiker.",
+          "price": "34.50",
+          "tags": ["mare"],
+          "heat": 0,
+          "image": "antipasti.jpg",
+          "signature": false
+        },
+        {
+          "name": "Tagliata di Manzo",
+          "sub": "controfiletto, rucola, scaglie di grana, riduzione all'Aglianico",
+          "desc": "Aufgeschnittenes Rindsentrecôte auf Rucola mit Grana-Spänen und einer Reduktion aus Aglianico-Wein.",
+          "price": "42.00",
+          "tags": [],
+          "heat": 0,
+          "image": "pasta-carbonara.jpg",
+          "signature": false
+        }
+      ]
+    },
+    {
+      "id": "dolci",
+      "name": "Dolci",
+      "subtitle": "Zum Abschluss",
+      "dishes": [
+        {
+          "name": "Tiramisù della casa",
+          "sub": "savoiardi, mascarpone, caffè, cacao",
+          "desc": "Jeden Morgen frisch angesetzt, im grossen Löffel serviert.",
+          "price": "11.50",
+          "tags": ["vegetariana"],
+          "heat": 0,
+          "image": "dolce-tiramisu.jpg",
+          "signature": true
+        },
+        {
+          "name": "Babà al rum",
+          "sub": "pasta lievitata, bagna al rum, crema",
+          "desc": "Der neapolitanischste aller Kuchen: ein Hefeteig, getränkt in Rum, mit einem Klecks Crème.",
+          "price": "10.50",
+          "tags": ["vegetariana"],
+          "heat": 0,
+          "image": "dolce-tiramisu.jpg",
+          "signature": false
+        },
+        {
+          "name": "Delizia al limone",
+          "sub": "pan di Spagna, crema al limone d'Amalfi",
+          "desc": "Zitronenküchlein von der Sorrentiner Halbinsel, umhüllt von Amalfi-Zitronencrème.",
+          "price": "11.50",
+          "tags": ["vegetariana"],
+          "heat": 0,
+          "image": "limoni.jpg",
+          "signature": false
+        },
+        {
+          "name": "Sfogliatella riccia",
+          "sub": "pasta sfoglia, ricotta, canditi, cannella",
+          "desc": "Die knusprige Muschel aus hauchdünnen Teigblättern, gefüllt mit Ricotta, Zitrusfrüchten und Zimt.",
+          "price": "6.50",
+          "tags": ["vegetariana"],
+          "heat": 0,
+          "image": "dolce-tiramisu.jpg",
+          "signature": false
+        }
+      ]
+    }
+  ]
+}

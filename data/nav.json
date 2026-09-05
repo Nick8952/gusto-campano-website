@@ -1,0 +1,14 @@
+{
+  "primary": [
+    { "label": "Speisekarte", "href": "/speisekarte/" },
+    { "label": "Über uns", "href": "/ueber-uns/" },
+    { "label": "Galerie", "href": "/galerie/" },
+    { "label": "Reservieren", "href": "/reservieren/" }
+  ],
+  "ctaLabel": "Tisch reservieren",
+  "ctaHref": "/reservieren/",
+  "footerLegal": [
+    { "label": "Impressum", "href": "/impressum/" },
+    { "label": "Datenschutz", "href": "/datenschutz/" }
+  ]
+}

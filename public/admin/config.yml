@@ -1,0 +1,366 @@
+# Sveltia CMS – Inhaltsverwaltung für gusto-campano.ch
+#
+# Backend: GitHub. Der Login läuft über einen OAuth-Proxy (Cloudflare Worker
+# "sveltia-cms-auth"). Vor dem ersten Login: GitHub-OAuth-App anlegen, Worker
+# deployen und dessen URL unten bei `base_url` eintragen.
+# Schritt für Schritt in HANDOVER.md, Abschnitt 1.
+
+backend:
+  name: github
+  repo: Nick8952/gusto-campano-website
+  branch: main
+  base_url: https://REPLACE-WITH-SVELTIA-AUTH-WORKER-URL
+
+publish_mode: simple
+site_url: https://nick8952.github.io/gusto-campano-website
+display_url: https://nick8952.github.io/gusto-campano-website
+logo_url: https://nick8952.github.io/gusto-campano-website/favicon.svg
+
+# Bilder liegen in public/img. Neue Fotos landen hier, wenn der Betrieb sie
+# über die Bild-Felder hochlädt.
+media_folder: "public/img"
+public_folder: "/img"
+
+i18n:
+  structure: single_file
+  locales: [de]
+
+collections:
+  # ────────────────────────────────────── Firmendaten
+  - name: firmendaten
+    label: "Firmendaten & Einstellungen"
+    icon: settings
+    editor: { preview: false }
+    files:
+      - name: site
+        label: "Firmendaten"
+        file: "data/site.json"
+        description: "Adresse, Telefon, Öffnungszeiten, Demo-Schalter, Formular- und Reservierungs-Einstellungen. Diese Angaben erscheinen in Kopf, Fuss und auf der Seite «Reservieren»."
+        fields:
+          - name: demo
+            label: "Demo-Modus"
+            widget: boolean
+            default: true
+            hint: "EIN = die Seite wird von Google & Co. ausgeschlossen. Beim echten Start AUS schalten."
+          - name: web3formsKey
+            label: "Schlüssel fürs Anfrageformular"
+            widget: string
+            required: false
+            hint: "Kostenlos auf web3forms.com für info@gusto-campano.ch anfordern. Ohne Schlüssel zeigt die Reservierungsseite statt des Formulars einen Hinweis mit Telefon/E-Mail."
+          - name: reservationUrl
+            label: "Link zum Buchungssystem"
+            widget: string
+            required: false
+            hint: "Sobald ein Reservierungs-Tool (z. B. aleno, Foratable, OpenTable) eingerichtet ist, hier die Buchungs-URL eintragen. Dann erscheint auf «Reservieren» ein Knopf zum System."
+          - { name: name, label: "Name (kurz)", widget: string }
+          - { name: legalName, label: "Name (vollständig)", widget: string }
+          - { name: tagline, label: "Leitsatz (italienisch)", widget: string }
+          - { name: taglineDe, label: "Leitsatz (deutsch)", widget: string }
+          - { name: blurb, label: "Kurzbeschreibung (Fusszeile & Google)", widget: text }
+          - { name: founder, label: "Wirtsfamilie", widget: string }
+          - { name: foundedYear, label: "Eröffnungsjahr", widget: string }
+          - { name: region, label: "Quartier / Region", widget: string }
+          - name: address
+            label: "Adresse"
+            widget: object
+            fields:
+              - { name: street, label: "Strasse & Nummer", widget: string }
+              - { name: zip, label: "PLZ", widget: string }
+              - { name: city, label: "Ort", widget: string }
+          - { name: phoneDisplay, label: "Telefon (Anzeige)", widget: string, hint: "z. B. 044 371 55 25" }
+          - { name: phoneTel, label: "Telefon (zum Anwählen)", widget: string, hint: "Internationales Format ohne Leerzeichen, z. B. +41443715525" }
+          - { name: email, label: "E-Mail", widget: string }
+          - { name: instagram, label: "Instagram-Adresse (URL)", widget: string, required: false }
+          - { name: instagramHandle, label: "Instagram-Name", widget: string, required: false, hint: "z. B. @gustocampanozurich" }
+          - { name: mapQuery, label: "Adresse für den Routen-Link", widget: string }
+          - { name: mapEmbed, label: "Karten-Einbettung (OpenStreetMap-URL)", widget: string, hint: "Ausschnitt der Anfahrtskarte. Nur ändern, wenn die Adresse wechselt." }
+          - { name: themeColor, label: "Farbe der Browser-Leiste (Hex)", widget: string }
+          - name: hours
+            label: "Öffnungszeiten"
+            widget: list
+            label_singular: "Tag"
+            summary: "{{fields.day}} — {{fields.value}}"
+            fields:
+              - { name: day, label: "Tag", widget: string }
+              - { name: value, label: "Zeiten", widget: string, hint: "«11:30 – 14:00 · 17:30 – 23:00» oder «geschlossen». Bindestrich zwischen den Zeiten, Mittelpunkt zwischen Mittag und Abend." }
+          - { name: kitchenNote, label: "Hinweis zur Küche / zu Gruppen", widget: text, required: false }
+          - name: facts
+            label: "Fakten-Streifen (Hero)"
+            widget: list
+            max: 4
+            label_singular: "Fakt"
+            summary: "{{fields.value}} — {{fields.label}}"
+            fields:
+              - { name: value, label: "Zahl", widget: string, hint: "z. B. 48 h" }
+              - { name: label, label: "Bezeichnung", widget: string, hint: "z. B. Teigreifung" }
+
+  # ────────────────────────────────────── Speisekarte
+  - name: speisekarte
+    label: "Speisekarte"
+    icon: restaurant
+    editor: { preview: false }
+    files:
+      - name: menu
+        label: "Speisekarte"
+        file: "data/menu.json"
+        description: "Alle Kategorien und Gerichte. Erscheint auf der Seite «Speisekarte» (mit Filter) und in Auszügen auf der Startseite."
+        fields:
+          - { name: intro, label: "Einleitungstext", widget: text }
+          - { name: allergyNote, label: "Hinweis zu Allergenen / Preisen", widget: text }
+          - name: categories
+            label: "Kategorien"
+            widget: list
+            label_singular: "Kategorie"
+            summary: "{{fields.name}} ({{fields.dishes.length}})"
+            fields:
+              - { name: id, label: "Kennung (nur Kleinbuchstaben, keine Leerzeichen)", widget: string, hint: "z. B. pizze-rosse. Nicht mehr ändern, sobald vergeben." }
+              - { name: name, label: "Name der Kategorie", widget: string }
+              - { name: subtitle, label: "Unterzeile", widget: string, required: false }
+              - name: dishes
+                label: "Gerichte"
+                widget: list
+                label_singular: "Gericht"
+                summary: "{{fields.name}} — {{fields.price}}"
+                fields:
+                  - { name: name, label: "Name", widget: string }
+                  - { name: sub, label: "Zutatenzeile (italienisch, klein)", widget: string, required: false }
+                  - { name: desc, label: "Beschreibung", widget: text, required: false }
+                  - { name: price, label: "Preis (nur Zahl)", widget: string, hint: "z. B. 18.50 – ohne «CHF»" }
+                  - name: tags
+                    label: "Merkmale"
+                    widget: select
+                    multiple: true
+                    required: false
+                    options:
+                      - { label: "Klassiker (classica)", value: classica }
+                      - { label: "Ohne Tomate (bianca)", value: bianca }
+                      - { label: "Vegetarisch (vegetariana)", value: vegetariana }
+                      - { label: "Fisch & Meer (mare)", value: mare }
+                  - { name: heat, label: "Schärfe (0–3)", widget: number, default: 0, min: 0, max: 3, value_type: int }
+                  - { name: image, label: "Bild", widget: image, required: false, choose_url: false }
+                  - { name: signature, label: "Empfehlung des Hauses", widget: boolean, default: false, hint: "Empfehlungen erscheinen zusätzlich in der Vorschau auf der Startseite." }
+
+  # ────────────────────────────────────── Galerie
+  - name: galerie
+    label: "Galerie"
+    icon: photo
+    editor: { preview: false }
+    files:
+      - name: gallery
+        label: "Galerie"
+        file: "data/gallery.json"
+        description: "Die Bilderwand auf der Seite «Galerie» und in der Vorschau auf der Startseite."
+        fields:
+          - { name: intro, label: "Einleitungstext", widget: text, required: false }
+          - name: images
+            label: "Bilder"
+            widget: list
+            label_singular: "Bild"
+            summary: "{{fields.alt}}"
+            fields:
+              - { name: src, label: "Bild", widget: image }
+              - { name: alt, label: "Bildbeschreibung (für Google & Screenreader)", widget: string }
+              - name: span
+                label: "Grösse im Raster"
+                widget: select
+                required: false
+                default: ""
+                options:
+                  - { label: "Normal", value: "" }
+                  - { label: "Breit (zwei Spalten)", value: "wide" }
+                  - { label: "Hoch (zwei Reihen)", value: "tall" }
+
+  # ────────────────────────────────────── Über uns
+  - name: ueberuns
+    label: "Über uns (Bausteine)"
+    icon: group
+    editor: { preview: false }
+    files:
+      - name: about
+        label: "Über uns – Bausteine"
+        file: "data/about.json"
+        description: "Die Methode «dal grano al forno», die Zutaten-Herkunft und das Zitat. Der Fliesstext der Seite steht unter «Seiten-Texte»."
+        fields:
+          - { name: craftHeading, label: "Methode – Überschrift", widget: string }
+          - { name: craftLead, label: "Methode – Einleitung", widget: text }
+          - name: craftSteps
+            label: "Methode – Schritte"
+            widget: list
+            label_singular: "Schritt"
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: "Titel", widget: string }
+              - { name: detail, label: "Text", widget: text }
+          - { name: ingredientsHeading, label: "Zutaten – Überschrift", widget: string }
+          - name: ingredients
+            label: "Zutaten"
+            widget: list
+            label_singular: "Zutat"
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: "Zutat", widget: string }
+              - { name: origin, label: "Herkunft / DOP", widget: string }
+              - { name: note, label: "Beschreibung", widget: text }
+          - { name: quote, label: "Zitat", widget: text }
+          - { name: quoteAuthor, label: "Zitat – von wem", widget: string }
+
+  # ────────────────────────────────────── Menü & Fusszeile
+  - name: navigation
+    label: "Menü & Fusszeile"
+    icon: menu
+    editor: { preview: false }
+    files:
+      - name: nav
+        label: "Menü"
+        file: "data/nav.json"
+        fields:
+          - name: primary
+            label: "Hauptmenü"
+            widget: list
+            label_singular: "Menüpunkt"
+            summary: "{{fields.label}}"
+            fields:
+              - { name: label, label: "Beschriftung", widget: string }
+              - { name: href, label: "Ziel", widget: string, hint: "z. B. /speisekarte/" }
+          - { name: ctaLabel, label: "Beschriftung Reservieren-Knopf", widget: string }
+          - { name: ctaHref, label: "Ziel Reservieren-Knopf", widget: string }
+          - name: footerLegal
+            label: "Rechtliches in der Fusszeile"
+            widget: list
+            label_singular: "Link"
+            summary: "{{fields.label}}"
+            fields:
+              - { name: label, label: "Beschriftung", widget: string }
+              - { name: href, label: "Ziel", widget: string }
+
+  # ────────────────────────────────────── Seiten-Texte
+  - name: seiten
+    label: "Seiten-Texte"
+    icon: description
+    editor: { preview: false }
+    description: "Überschriften, Einleitungen und Fliesstexte der einzelnen Seiten."
+    files:
+      - name: home
+        label: "Startseite"
+        file: "content/pages/home.md"
+        fields:
+          - { name: seoTitle, label: "Titel für Browser-Tab & Google", widget: string }
+          - { name: seoDescription, label: "Beschreibung für Google (~150 Zeichen)", widget: text }
+          - name: hero
+            label: "Kopfbereich (Hero)"
+            widget: object
+            fields:
+              - { name: eyebrowIt, label: "Überzeile italienisch", widget: string }
+              - { name: eyebrowDe, label: "Überzeile deutsch", widget: string }
+              - { name: titleLine1, label: "Titel – erster Teil", widget: string }
+              - { name: titleAccent, label: "Titel – zweiter Teil (farbig, kursiv)", widget: string }
+              - { name: lead, label: "Einleitungstext", widget: text }
+          - { name: valueHeading, label: "Abschnitt «Wer wir sind» – Überschrift", widget: string }
+          - { name: valueBody, label: "Abschnitt «Wer wir sind» – Text", widget: markdown, hint: "Leerzeile = neuer Absatz." }
+          - { name: menuHeading, label: "Abschnitt «Karte» – Überschrift", widget: string }
+          - { name: menuLead, label: "Abschnitt «Karte» – Einleitung", widget: text }
+          - { name: galleryHeading, label: "Abschnitt «Galerie» – Überschrift", widget: string }
+          - { name: galleryLead, label: "Abschnitt «Galerie» – Einleitung", widget: text }
+          - { name: closingHeading, label: "Abschnitt «Reservieren» – Überschrift", widget: string }
+          - { name: closingBody, label: "Abschnitt «Reservieren» – Text", widget: text }
+          - { name: body, label: "(unbenutzt)", widget: hidden, required: false }
+      - name: speisekarte
+        label: "Speisekarte (Kopf)"
+        file: "content/pages/speisekarte.md"
+        fields:
+          - { name: seoTitle, label: "Titel für Browser-Tab & Google", widget: string }
+          - { name: seoDescription, label: "Beschreibung für Google", widget: text }
+          - name: hero
+            label: "Kopfbereich"
+            widget: object
+            fields:
+              - { name: eyebrowIt, label: "Überzeile italienisch", widget: string }
+              - { name: eyebrowDe, label: "Überzeile deutsch", widget: string }
+              - { name: title, label: "Überschrift", widget: string }
+              - { name: lead, label: "Einleitungstext", widget: text }
+          - { name: body, label: "(unbenutzt)", widget: hidden, required: false }
+      - name: ueberuns
+        label: "Über uns (Text)"
+        file: "content/pages/ueber-uns.md"
+        fields:
+          - { name: seoTitle, label: "Titel für Browser-Tab & Google", widget: string }
+          - { name: seoDescription, label: "Beschreibung für Google", widget: text }
+          - name: hero
+            label: "Kopfbereich"
+            widget: object
+            fields:
+              - { name: eyebrowIt, label: "Überzeile italienisch", widget: string }
+              - { name: eyebrowDe, label: "Überzeile deutsch", widget: string }
+              - { name: title, label: "Überschrift", widget: string }
+              - { name: lead, label: "Einleitungstext", widget: text }
+          - { name: body, label: "Fliesstext der Seite", widget: markdown, hint: "«## Titel» ergibt einen Zwischentitel. Leerzeile = neuer Absatz." }
+          - { name: quote, label: "Zitat", widget: text, required: false }
+          - { name: quoteAuthor, label: "Zitat – von wem", widget: string, required: false }
+      - name: galerie
+        label: "Galerie (Kopf)"
+        file: "content/pages/galerie.md"
+        fields:
+          - { name: seoTitle, label: "Titel für Browser-Tab & Google", widget: string }
+          - { name: seoDescription, label: "Beschreibung für Google", widget: text }
+          - name: hero
+            label: "Kopfbereich"
+            widget: object
+            fields:
+              - { name: eyebrowIt, label: "Überzeile italienisch", widget: string }
+              - { name: eyebrowDe, label: "Überzeile deutsch", widget: string }
+              - { name: title, label: "Überschrift", widget: string }
+              - { name: lead, label: "Einleitungstext", widget: text }
+          - { name: body, label: "(unbenutzt)", widget: hidden, required: false }
+      - name: reservieren
+        label: "Reservieren (Texte)"
+        file: "content/pages/reservieren.md"
+        fields:
+          - { name: seoTitle, label: "Titel für Browser-Tab & Google", widget: string }
+          - { name: seoDescription, label: "Beschreibung für Google", widget: text }
+          - name: hero
+            label: "Kopfbereich"
+            widget: object
+            fields:
+              - { name: eyebrowIt, label: "Überzeile italienisch", widget: string }
+              - { name: eyebrowDe, label: "Überzeile deutsch", widget: string }
+              - { name: title, label: "Überschrift", widget: string }
+              - { name: lead, label: "Einleitungstext", widget: text }
+          - { name: reservationHeading, label: "Block «Online reservieren» – Überschrift", widget: string }
+          - { name: reservationBody, label: "Block «Online reservieren» – Text", widget: text }
+          - { name: formHeading, label: "Block «Anfrage» – Überschrift", widget: string }
+          - { name: formLead, label: "Block «Anfrage» – Einleitung", widget: text }
+          - { name: body, label: "(unbenutzt)", widget: hidden, required: false }
+      - name: danke
+        label: "Danke-Seite"
+        file: "content/pages/danke.md"
+        fields:
+          - { name: seoTitle, label: "Titel für Browser-Tab", widget: string }
+          - { name: seoDescription, label: "Beschreibung", widget: text }
+          - name: hero
+            label: "Inhalt"
+            widget: object
+            fields:
+              - { name: eyebrowIt, label: "Überzeile italienisch", widget: string }
+              - { name: eyebrowDe, label: "Überzeile deutsch", widget: string }
+              - { name: title, label: "Überschrift", widget: string }
+              - { name: lead, label: "Text", widget: text }
+          - { name: body, label: "(unbenutzt)", widget: hidden, required: false }
+
+  # ────────────────────────────────────── Rechtstexte
+  - name: rechtstexte
+    label: "Impressum & Datenschutz"
+    label_singular: "Rechtstext"
+    icon: gavel
+    folder: "content/legal"
+    extension: md
+    format: frontmatter
+    create: false
+    delete: false
+    identifier_field: title
+    editor: { preview: false }
+    fields:
+      - { name: title, label: "Titel", widget: string }
+      - { name: subtitle, label: "Untertitel", widget: text, required: false }
+      - { name: seoTitle, label: "Titel für Browser-Tab", widget: string, required: false }
+      - { name: seoDescription, label: "Beschreibung für Google", widget: text, required: false }
+      - { name: body, label: "Inhalt", widget: markdown }

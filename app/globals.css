@@ -1,0 +1,325 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6.5rem;
+  }
+
+  body {
+    @apply bg-carbone text-latte font-sans text-step-0 antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-semibold tracking-[-0.01em] text-latte;
+    text-wrap: balance;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  a {
+    overflow-wrap: break-word;
+  }
+
+  ::selection {
+    @apply bg-fiamma text-fiamma-ink;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.fiamma");
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Auf den warm-hellen Blöcken dreht sich der Fokusring auf Rot. */
+  .block-panna :focus-visible {
+    outline-color: theme("colors.brace");
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* ── Farbblöcke ──────────────────────────────────────────────────
+     Dunkel-dominant. Der panna-Block ist die bewusste warm-helle
+     Punktierung für Rhythmus – sparsam einsetzen.                    */
+  .block-carbone {
+    @apply bg-carbone text-latte;
+  }
+
+  .block-deep {
+    @apply bg-carbone-deep text-latte;
+  }
+
+  .block-pietra {
+    @apply bg-pietra text-latte;
+  }
+
+  .block-panna {
+    @apply bg-panna text-carbone;
+  }
+
+  .block-panna h1,
+  .block-panna h2,
+  .block-panna h3,
+  .block-panna h4 {
+    @apply text-carbone;
+  }
+
+  /* ── Signatur-Strukturelement: die «carta»-Führungslinie ─────────
+     Gepunktete Leader-Linie wie auf einer gedruckten Speisekarte
+     (Margherita · · · · · 18.—). Zieht sich als Trenner durch die
+     ganze Seite und bindet jede Sektion an den Gedanken «Karte».     */
+  .leader {
+    flex: 1;
+    height: 0;
+    border-bottom: 2px dotted theme("colors.crosta");
+    align-self: flex-end;
+    margin-bottom: 0.34em;
+  }
+
+  .block-panna .leader {
+    border-bottom-color: rgba(74, 53, 39, 0.4);
+  }
+
+  .rule-carta {
+    height: 0;
+    border-top: 2px dotted theme("colors.crosta");
+  }
+
+  /* ── Karten ─────────────────────────────────────────────────────── */
+  .card-forno {
+    @apply rounded-card border border-crosta/70 bg-pietra shadow-forno;
+  }
+
+  .card-forno-hover {
+    transition: transform 260ms theme("transitionTimingFunction.forno"),
+      border-color 260ms ease, box-shadow 260ms ease;
+  }
+
+  .card-forno-hover:hover {
+    @apply border-fiamma/45 shadow-glow;
+    transform: translateY(-3px);
+  }
+
+  /* ── Buttons ────────────────────────────────────────────────────── */
+  .btn {
+    @apply inline-flex min-h-[50px] items-center justify-center gap-2
+           rounded-pill px-7 py-3 font-sans text-step--1 font-semibold
+           tracking-[0.02em] transition-all duration-200 ease-forno
+           cursor-pointer;
+  }
+
+  /* Ofenglut – primäre Handlung (reservieren). Dunkler Text auf Glut:
+     hoher Kontrast, wirkt wie ein glühender Stempel. */
+  .btn-fiamma {
+    @apply bg-fiamma text-fiamma-ink shadow-forno;
+  }
+
+  .btn-fiamma:hover {
+    @apply shadow-glow;
+    background: theme("colors.fiamma-soft");
+    transform: translateY(-2px);
+  }
+
+  .btn-brace {
+    @apply bg-brace text-latte shadow-forno;
+  }
+
+  .btn-brace:hover {
+    background: theme("colors.brace-hi");
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    @apply border border-latte/30 bg-transparent text-latte;
+  }
+
+  .btn-outline:hover {
+    @apply border-fiamma text-fiamma;
+  }
+
+  .block-panna .btn-outline {
+    @apply border-carbone/25 text-carbone;
+  }
+
+  .block-panna .btn-outline:hover {
+    @apply border-brace bg-brace text-latte;
+  }
+
+  .btn-ghost {
+    @apply text-latte-dim;
+  }
+
+  .btn-ghost:hover {
+    @apply text-fiamma;
+  }
+
+  /* ── Überzeile: zweisprachig, mono ──────────────────────────────
+     «LA CARTA · die Speisekarte» – kodiert die Doppelrolle des
+     Hauses: kampanische Küche für ein Zürcher Publikum.              */
+  .eyebrow {
+    @apply inline-flex items-baseline gap-2 font-mono text-step--1
+           uppercase tracking-[0.2em] text-fiamma;
+  }
+
+  .eyebrow .eyebrow-de {
+    @apply tracking-[0.14em] text-latte-dim normal-case;
+  }
+
+  .block-panna .eyebrow {
+    @apply text-brace;
+  }
+
+  .block-panna .eyebrow .eyebrow-de {
+    @apply text-carbone/55;
+  }
+
+  /* ── Textlinks im Fliesstext ───────────────────────────────────── */
+  .link {
+    @apply underline decoration-fiamma decoration-2 underline-offset-4
+           transition-colors duration-150;
+  }
+
+  .link:hover {
+    @apply text-fiamma decoration-fiamma-soft;
+  }
+
+  .block-panna .link {
+    @apply decoration-brace;
+  }
+
+  .block-panna .link:hover {
+    @apply text-brace;
+  }
+
+  /* ── Menü-Filter-Chips ─────────────────────────────────────────── */
+  .chip {
+    @apply inline-flex min-h-[42px] cursor-pointer items-center gap-2
+           rounded-pill border border-crosta px-4 py-2 font-mono
+           text-step--1 uppercase tracking-[0.12em] text-latte-dim
+           transition-colors duration-150;
+  }
+
+  .chip:hover {
+    @apply border-fiamma/50 text-latte;
+  }
+
+  .chip[aria-pressed="true"] {
+    @apply border-brace bg-brace text-latte;
+  }
+
+  /* ── Redaktions-Typografie (Markdown aus dem CMS) ──────────────── */
+  .prose-gc > * + * {
+    @apply mt-5;
+  }
+
+  .prose-gc h2 {
+    @apply mt-12 text-step-2;
+  }
+
+  .prose-gc h3 {
+    @apply mt-9 text-step-1;
+  }
+
+  .prose-gc p,
+  .prose-gc li {
+    @apply text-step-0 leading-relaxed text-latte-dim;
+  }
+
+  .prose-gc ul,
+  .prose-gc ol {
+    @apply space-y-2 pl-6;
+  }
+
+  .prose-gc ul {
+    @apply list-disc marker:text-brace;
+  }
+
+  .prose-gc ol {
+    @apply list-decimal marker:font-mono marker:text-brace;
+  }
+
+  .prose-gc a {
+    @apply link;
+  }
+
+  .prose-gc strong {
+    @apply font-semibold text-latte;
+  }
+
+  .prose-gc em {
+    @apply font-display italic text-latte;
+  }
+
+  .prose-gc hr {
+    @apply my-10 border-0 border-t-2 border-dotted border-crosta;
+  }
+
+  .block-panna .prose-gc p,
+  .block-panna .prose-gc li {
+    @apply text-carbone/80;
+  }
+
+  .block-panna .prose-gc strong,
+  .block-panna .prose-gc em {
+    @apply text-carbone;
+  }
+}
+
+@layer utilities {
+  /* Ofenglut-Atem hinterm Hero – sehr langsam, greift nicht bei
+     prefers-reduced-motion (globale Regel oben). */
+  .ember-breathe {
+    animation: ember-breathe 9s ease-in-out infinite;
+  }
+
+  @keyframes ember-breathe {
+    0%,
+    100% {
+      opacity: 0.55;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.06);
+    }
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}

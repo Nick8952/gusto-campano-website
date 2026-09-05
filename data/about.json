@@ -1,0 +1,47 @@
+{
+  "craftHeading": "Dal grano al forno",
+  "craftLead": "Vier Schritte stehen zwischen dem Mehl und dem Teller. Wir lassen uns bei keinem davon zur Eile drängen.",
+  "craftSteps": [
+    {
+      "title": "Der Teig",
+      "detail": "Nur Mehl, Wasser, Meersalz und wenig Hefe. Von Hand angesetzt, kein Kneten mit der Maschine bis zur Wärme."
+    },
+    {
+      "title": "48 Stunden Zeit",
+      "detail": "Zwei Tage reift der Teig kühl. Das macht ihn bekömmlich und leicht – man liegt danach nicht schwer im Magen."
+    },
+    {
+      "title": "485 Grad",
+      "detail": "Der Holzofen wird mit Buchen- und Eichenscheiten befeuert. Die Kuppel speichert die Hitze gleichmässig."
+    },
+    {
+      "title": "70 Sekunden",
+      "detail": "So lange liegt die Pizza im Feuer. Der Rand bläht auf, bekommt seine dunklen Flecken – das Leopardenmuster."
+    }
+  ],
+  "ingredientsHeading": "Woher es kommt",
+  "ingredients": [
+    {
+      "name": "San-Marzano-Tomaten",
+      "origin": "Agro Sarnese-Nocerino, DOP",
+      "note": "Wachsen im vulkanischen Boden am Fuss des Vesuv. Süss, wenig Kerne, tiefrot."
+    },
+    {
+      "name": "Mozzarella di Bufala",
+      "origin": "Caserta & Salerno, DOP",
+      "note": "Zweimal pro Woche geliefert. Kommt roh auf die fertige Pizza, nie in den Ofen."
+    },
+    {
+      "name": "Fior di Latte",
+      "origin": "Agerola, Monti Lattari",
+      "note": "Kuhmilch-Mozzarella aus den Bergen über der Amalfiküste. Schmilzt, ohne zu wässern."
+    },
+    {
+      "name": "Olivenöl extra vergine",
+      "origin": "Cilento, DOP",
+      "note": "Kaltgepresst aus der Sorte Pisciottana. Grasig, leicht pfeffrig im Abgang."
+    }
+  ],
+  "quote": "In Kampanien fragt niemand, ob die Pizza gut ist. Man fragt, wer sie gemacht hat.",
+  "quoteAuthor": "Familie Visone"
+}
