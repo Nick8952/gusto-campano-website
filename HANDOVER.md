@@ -251,6 +251,15 @@ zeigen *nicht* das echte Lokal. Vor dem Go-Live durch eigene Aufnahmen ersetzen
 (CMS → Galerie und die Bild-Felder bei den Gerichten). Bis dahin steht auf der
 Galerie-Seite ein entsprechender Hinweis.
 
+**Logo** – Das Logo (Vesuv-Silhouette, «GUSTO» grün / «CAMPANO» weinrot,
+Peperoncino) ist als **SVG nachgebaut** (`components/Logo.tsx`, Schrift Fredoka)
+und passt sich hell/dunkel an. Es ist sehr nah am Original, aber kein exakter
+Nachdruck der Vorlage. Wenn der Betrieb die Logo-Datei liefert
+(am besten SVG oder PNG mit transparentem Hintergrund), legt man sie unter
+`public/img/logo-original.svg` ab und ersetzt in `components/Logo.tsx` den
+SVG-Inhalt durch `<img src={img("logo-original.svg")} alt="Gusto Campano" />`
+(auf dunklem Grund braucht es dann eine helle Variante des Logos).
+
 **Telefonnummer** – Eingetragen ist `044 371 55 25`, die Nummer der Adresse
 Schauenbergstrasse 8 aus dem öffentlichen Verzeichnis (früher „Da Enzo").
 **Vom Betrieb bestätigen lassen**, ob das noch stimmt.

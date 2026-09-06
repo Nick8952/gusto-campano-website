@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { nav, site } from "@/lib/site";
+import Logo from "./Logo";
 import PeakMark from "./PeakMark";
-import Wordmark from "./Wordmark";
 import { IconArrowUpRight, IconClose, IconMenu } from "./Icons";
 import { openStateFor } from "./openState";
 
@@ -71,7 +71,7 @@ export default function SiteHeader() {
             className="shrink-0"
             aria-label={`${site.name} – zur Startseite`}
           >
-            <Wordmark />
+            <Logo className="h-12 w-auto sm:h-14" />
           </Link>
 
           <nav aria-label="Hauptmenü" className="hidden lg:block">

@@ -1,5 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Hanken_Grotesk, Piazzolla, Spline_Sans_Mono } from "next/font/google";
+import {
+  Fredoka,
+  Hanken_Grotesk,
+  Piazzolla,
+  Spline_Sans_Mono,
+} from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import SiteFooter from "@/components/SiteFooter";
@@ -37,6 +42,18 @@ const mono = Spline_Sans_Mono({
   display: "swap",
 });
 
+/**
+ * Fredoka – ausschliesslich für die Wort-/Bildmarke «GUSTO CAMPANO».
+ * Runde, kräftige geometrische Grotesk, sehr nah am gedruckten Logo des
+ * Hauses. Kommt nirgends sonst im Fliesstext vor.
+ */
+const logo = Fredoka({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-logo",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -71,7 +88,7 @@ export default function RootLayout({
   return (
     <html
       lang="de-CH"
-      className={`${display.variable} ${body.variable} ${mono.variable}`}
+      className={`${display.variable} ${body.variable} ${mono.variable} ${logo.variable}`}
     >
       <body className="flex min-h-screen flex-col">
         {/* Sicherheitsnetz: ohne JavaScript bleiben die eingeblendeten

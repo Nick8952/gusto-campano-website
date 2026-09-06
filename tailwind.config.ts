@@ -65,6 +65,8 @@ const config: Config = {
         // Spline Sans Mono – Preise, Temperaturen, Zeiten, die zweisprachigen
         //   Überzeilen. Setzt die Karte wie eine gedruckte «carta».
         mono: ["var(--font-mono)", "Spline Sans Mono", "ui-monospace", "monospace"],
+        // Fredoka – nur für die Wortmarke «GUSTO CAMPANO».
+        logo: ["var(--font-logo)", "Fredoka", "system-ui", "sans-serif"],
       },
       fontSize: {
         "step--1": ["clamp(0.82rem, 0.79rem + 0.15vw, 0.9rem)", { lineHeight: "1.5" }],

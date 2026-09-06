@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { addressLine, mapsLink, nav, site } from "@/lib/site";
 import { Container } from "./ui";
-import PeakMark from "./PeakMark";
+import Logo from "./Logo";
 import { IconInstagram, IconMail, IconPhone, IconPin } from "./Icons";
 
 export default function SiteFooter() {
@@ -12,13 +12,7 @@ export default function SiteFooter() {
       <Container className="py-16 sm:py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <span className="flex items-center gap-3">
-              <PeakMark className="h-12 w-12 shrink-0 text-oliva-hi" title="" />
-              <span className="font-display text-[1.5rem] leading-none tracking-[-0.01em]">
-                <span className="text-oliva-hi">Gusto</span>{" "}
-                <span className="italic text-brace-hi">Campano</span>
-              </span>
-            </span>
+            <Logo className="h-24 w-auto" />
             <p className="mt-5 max-w-xs text-step--1 leading-relaxed text-latte-mute">
               {site.blurb}
             </p>
