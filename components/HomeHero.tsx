@@ -17,7 +17,7 @@ export default function HomeHero({ hero }: { hero: Hero }) {
         alt="Feuer im gemauerten Holzofen"
         className="absolute inset-0 -z-20 h-full w-full object-cover"
       />
-      {/* Ofenglut */}
+      {/* Ofenglut – tiefes Weinrot mit warmem Kern, an die Logo-Farbe angelehnt */}
       <div
         aria-hidden="true"
         className="ember-breathe absolute -z-10 h-[80vmin] w-[80vmin] rounded-full blur-3xl"
@@ -25,7 +25,7 @@ export default function HomeHero({ hero }: { hero: Hero }) {
           right: "-10vmin",
           bottom: "-6vmin",
           background:
-            "radial-gradient(circle, rgba(224,122,44,0.55), rgba(178,58,46,0.28) 45%, transparent 70%)",
+            "radial-gradient(circle, rgba(217,138,102,0.5), rgba(126,42,59,0.32) 42%, transparent 70%)",
         }}
       />
       {/* Lesbarkeit */}
@@ -45,7 +45,7 @@ export default function HomeHero({ hero }: { hero: Hero }) {
 
         <h1 className="mt-5 max-w-4xl font-display text-step-5 font-semibold leading-[0.95] text-latte">
           {hero.titleLine1}{" "}
-          <span className="italic text-fiamma">{hero.titleAccent}</span>
+          <span className="italic text-oliva-hi">{hero.titleAccent}</span>
         </h1>
 
         <p className="mt-6 max-w-xl text-step-1 leading-relaxed text-latte-dim">
@@ -53,7 +53,7 @@ export default function HomeHero({ hero }: { hero: Hero }) {
         </p>
 
         <div className="mt-9 flex flex-wrap items-center gap-3">
-          <Link href="/reservieren/" className="btn btn-fiamma">
+          <Link href="/reservieren/" className="btn btn-primary">
             Tisch reservieren
             <IconArrowRight className="h-4 w-4" />
           </Link>
@@ -72,7 +72,7 @@ export default function HomeHero({ hero }: { hero: Hero }) {
         <dl className="mt-12 flex flex-wrap gap-x-10 gap-y-4 border-t-2 border-dotted border-crosta pt-6">
           {site.facts.map((f) => (
             <div key={f.label} className="flex items-baseline gap-2.5">
-              <dt className="font-mono text-step-1 text-fiamma">{f.value}</dt>
+              <dt className="font-mono text-step-1 text-brace-hi">{f.value}</dt>
               <dd className="font-mono text-[0.72rem] uppercase tracking-[0.14em] text-latte-mute">
                 {f.label}
               </dd>

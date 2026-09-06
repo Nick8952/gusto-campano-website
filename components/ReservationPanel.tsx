@@ -26,7 +26,7 @@ export default function ReservationPanel({
             href={url}
             target="_blank"
             rel="noreferrer"
-            className="btn btn-fiamma"
+            className="btn btn-primary"
           >
             Zum Buchungssystem
             <IconArrowUpRight className="h-4 w-4" />

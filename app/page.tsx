@@ -38,7 +38,7 @@ export default function HomePage() {
               />
               <Link
                 href="/ueber-uns/"
-                className="mt-7 inline-flex items-center gap-2 font-mono text-step--1 uppercase tracking-[0.14em] text-fiamma hover:text-fiamma-soft"
+                className="mt-7 inline-flex items-center gap-2 font-mono text-step--1 uppercase tracking-[0.14em] text-brace-hi hover:text-brace"
               >
                 Die ganze Geschichte
                 <IconArrowRight className="h-4 w-4" />
@@ -53,7 +53,7 @@ export default function HomePage() {
                 />
               </div>
               <div className="absolute -bottom-5 -left-5 hidden rounded-card border border-crosta bg-carbone-deep p-4 sm:block">
-                <p className="font-mono text-step-1 text-fiamma">48 h</p>
+                <p className="font-mono text-step-1 text-brace-hi">48 h</p>
                 <p className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-latte-mute">
                   Teigreifung
                 </p>
@@ -109,7 +109,7 @@ export default function HomePage() {
             <GalleryWall limit={8} />
             <Link
               href="/galerie/"
-              className="mt-6 inline-flex items-center gap-2 font-mono text-step--1 uppercase tracking-[0.14em] text-fiamma hover:text-fiamma-soft"
+              className="mt-6 inline-flex items-center gap-2 font-mono text-step--1 uppercase tracking-[0.14em] text-brace-hi hover:text-brace"
             >
               Zur Galerie
               <IconArrowRight className="h-4 w-4" />
@@ -133,7 +133,7 @@ export default function HomePage() {
                 {String(page.closingBody ?? "")}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/reservieren/" className="btn btn-fiamma">
+                <Link href="/reservieren/" className="btn btn-primary">
                   Tisch reservieren
                   <IconArrowRight className="h-4 w-4" />
                 </Link>

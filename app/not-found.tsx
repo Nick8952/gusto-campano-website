@@ -22,7 +22,7 @@ export default function NotFound() {
           Startseite.
         </p>
         <div className="mt-9 flex flex-wrap gap-3">
-          <Link href="/" className="btn btn-fiamma">
+          <Link href="/" className="btn btn-primary">
             Zur Startseite
             <IconArrowRight className="h-4 w-4" />
           </Link>

@@ -77,7 +77,7 @@ export default function InteractiveMenu() {
       </div>
 
       {/* Erzählzeile */}
-      <div className="mt-6 min-h-[3.5rem] border-l-2 border-brace pl-4">
+      <div className="mt-6 min-h-[3.5rem] border-l-2 border-brace-hi pl-4">
         <AnimatePresence mode="wait">
           <motion.p
             key={active.id}

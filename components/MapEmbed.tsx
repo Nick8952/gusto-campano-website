@@ -21,7 +21,7 @@ export default function MapEmbed() {
           href={mapsLink}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-1.5 font-mono text-[0.72rem] uppercase tracking-[0.12em] text-fiamma hover:text-fiamma-soft"
+          className="inline-flex items-center gap-1.5 font-mono text-[0.72rem] uppercase tracking-[0.12em] text-brace-hi hover:text-brace"
         >
           Route öffnen
           <IconArrowUpRight className="h-3.5 w-3.5" />

@@ -3,7 +3,7 @@ import { SITE_URL, site } from "@/lib/site";
 const field =
   "w-full rounded-card border border-crosta bg-carbone px-4 py-3 text-step-0 " +
   "text-latte transition-colors duration-150 placeholder:text-latte-mute/50 " +
-  "hover:border-fiamma/40 focus:border-fiamma";
+  "hover:border-brace-hi/40 focus:border-brace-hi";
 
 const label = "block text-step--1 font-semibold text-latte";
 
@@ -151,7 +151,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={!live}
-          className="btn btn-fiamma disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:translate-y-0"
+          className="btn btn-primary disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:translate-y-0"
         >
           Anfrage senden
         </button>

@@ -22,7 +22,7 @@
   "instagramHandle": "@gustocampanozurich",
   "mapQuery": "Schauenbergstrasse 8, 8046 Zürich",
   "mapEmbed": "https://www.openstreetmap.org/export/embed.html?bbox=8.4930%2C47.4120%2C8.5190%2C47.4250&layer=mapnik&marker=47.4185%2C8.5058",
-  "themeColor": "#17100C",
+  "themeColor": "#17100E",
   "hours": [
     { "day": "Montag", "value": "geschlossen" },
     { "day": "Dienstag", "value": "11:30 – 14:00 · 17:30 – 23:00" },

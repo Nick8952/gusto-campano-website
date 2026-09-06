@@ -90,7 +90,7 @@ export default function ReservierenPage() {
                 href={mapsLink}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-1.5 font-mono text-[0.72rem] uppercase tracking-[0.12em] text-fiamma hover:text-fiamma-soft"
+                className="mt-6 inline-flex items-center gap-1.5 font-mono text-[0.72rem] uppercase tracking-[0.12em] text-brace-hi hover:text-brace"
               >
                 {addressLine} · Route
                 <IconArrowUpRight className="h-3.5 w-3.5" />

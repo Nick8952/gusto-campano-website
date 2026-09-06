@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { addressLine, mapsLink, nav, site } from "@/lib/site";
 import { Container } from "./ui";
-import StampMark from "./StampMark";
+import PeakMark from "./PeakMark";
 import { IconInstagram, IconMail, IconPhone, IconPin } from "./Icons";
 
 export default function SiteFooter() {
@@ -13,9 +13,10 @@ export default function SiteFooter() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <span className="flex items-center gap-3">
-              <StampMark className="h-14 w-14 shrink-0" title="" />
-              <span className="font-display text-[1.5rem] leading-none tracking-[-0.01em] text-latte">
-                Gusto <span className="italic text-fiamma">Campano</span>
+              <PeakMark className="h-12 w-12 shrink-0 text-oliva-hi" title="" />
+              <span className="font-display text-[1.5rem] leading-none tracking-[-0.01em]">
+                <span className="text-oliva-hi">Gusto</span>{" "}
+                <span className="italic text-brace-hi">Campano</span>
               </span>
             </span>
             <p className="mt-5 max-w-xs text-step--1 leading-relaxed text-latte-mute">
@@ -25,7 +26,7 @@ export default function SiteFooter() {
               href={site.instagram}
               target="_blank"
               rel="noreferrer"
-              className="mt-5 inline-flex items-center gap-2 rounded-pill border border-crosta px-3.5 py-2 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-latte-dim transition-colors hover:border-fiamma/50 hover:text-fiamma"
+              className="mt-5 inline-flex items-center gap-2 rounded-pill border border-crosta px-3.5 py-2 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-latte-dim transition-colors hover:border-brace-hi/50 hover:text-brace-hi"
             >
               <IconInstagram className="h-4 w-4" />
               {site.instagramHandle}
@@ -41,7 +42,7 @@ export default function SiteFooter() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-step--1 text-latte-dim hover:text-fiamma"
+                    className="text-step--1 text-latte-dim hover:text-brace-hi"
                   >
                     {item.label}
                   </Link>
@@ -51,7 +52,7 @@ export default function SiteFooter() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-step--1 text-latte-mute hover:text-fiamma"
+                    className="text-step--1 text-latte-mute hover:text-brace-hi"
                   >
                     {item.label}
                   </Link>
@@ -67,19 +68,19 @@ export default function SiteFooter() {
             <ul className="mt-4 space-y-3 text-step--1 text-latte-dim">
               <li className="flex items-start gap-2.5">
                 <IconPin className="mt-0.5 h-4 w-4 shrink-0 text-brace-hi" />
-                <a href={mapsLink} target="_blank" rel="noreferrer" className="hover:text-fiamma">
+                <a href={mapsLink} target="_blank" rel="noreferrer" className="hover:text-brace-hi">
                   {addressLine}
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <IconPhone className="h-4 w-4 shrink-0 text-brace-hi" />
-                <a href={`tel:${site.phoneTel}`} className="hover:text-fiamma">
+                <a href={`tel:${site.phoneTel}`} className="hover:text-brace-hi">
                   {site.phoneDisplay}
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <IconMail className="h-4 w-4 shrink-0 text-brace-hi" />
-                <a href={`mailto:${site.email}`} className="hover:text-fiamma break-all">
+                <a href={`mailto:${site.email}`} className="hover:text-brace-hi break-all">
                   {site.email}
                 </a>
               </li>

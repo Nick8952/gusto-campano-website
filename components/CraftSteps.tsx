@@ -19,7 +19,7 @@ export default function CraftSteps() {
         >
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute -right-2 -top-4 font-display text-[5.5rem] font-bold leading-none text-brace/15"
+            className="pointer-events-none absolute -right-2 -top-4 font-display text-[5.5rem] font-bold leading-none text-brace-hi/25"
           >
             {i + 1}
           </span>

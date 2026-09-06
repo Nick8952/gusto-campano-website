@@ -53,7 +53,7 @@ export default function DishCard({ dish }: { dish: Dish }) {
         {(veg || mare || dish.heat > 0 || dish.signature) && (
           <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 font-mono text-[0.68rem] uppercase tracking-[0.12em]">
             {dish.signature ? (
-              <span className="inline-flex items-center gap-1 text-fiamma">
+              <span className="inline-flex items-center gap-1 text-brace-hi">
                 <IconSpark className="h-3.5 w-3.5" />
                 Empfehlung
               </span>

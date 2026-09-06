@@ -40,16 +40,16 @@
   }
 
   ::selection {
-    @apply bg-fiamma text-fiamma-ink;
+    @apply bg-brace text-brace-ink;
   }
 
   :focus-visible {
-    outline: 2px solid theme("colors.fiamma");
+    outline: 2px solid theme("colors.brace-hi");
     outline-offset: 3px;
     border-radius: 2px;
   }
 
-  /* Auf den warm-hellen Blöcken dreht sich der Fokusring auf Rot. */
+  /* Auf den warm-hellen Blöcken dreht sich der Fokusring auf sattes Weinrot. */
   .block-panna :focus-visible {
     outline-color: theme("colors.brace");
   }
@@ -127,7 +127,7 @@
   }
 
   .card-forno-hover:hover {
-    @apply border-fiamma/45 shadow-glow;
+    @apply border-brace-hi/40 shadow-glow;
     transform: translateY(-3px);
   }
 
@@ -139,24 +139,15 @@
            cursor-pointer;
   }
 
-  /* Ofenglut – primäre Handlung (reservieren). Dunkler Text auf Glut:
-     hoher Kontrast, wirkt wie ein glühender Stempel. */
-  .btn-fiamma {
-    @apply bg-fiamma text-fiamma-ink shadow-forno;
+  /* Primäre Handlung (reservieren) – Weinrot aus dem Logo,
+     warm-helle Schrift, wirkt wie ein gestempeltes Etikett. */
+  .btn-primary {
+    @apply bg-brace text-brace-ink shadow-forno;
   }
 
-  .btn-fiamma:hover {
+  .btn-primary:hover {
     @apply shadow-glow;
-    background: theme("colors.fiamma-soft");
-    transform: translateY(-2px);
-  }
-
-  .btn-brace {
-    @apply bg-brace text-latte shadow-forno;
-  }
-
-  .btn-brace:hover {
-    background: theme("colors.brace-hi");
+    background: #93374b;
     transform: translateY(-2px);
   }
 
@@ -165,7 +156,7 @@
   }
 
   .btn-outline:hover {
-    @apply border-fiamma text-fiamma;
+    @apply border-brace-hi text-brace-hi;
   }
 
   .block-panna .btn-outline {
@@ -173,7 +164,7 @@
   }
 
   .block-panna .btn-outline:hover {
-    @apply border-brace bg-brace text-latte;
+    @apply border-brace bg-brace text-brace-ink;
   }
 
   .btn-ghost {
@@ -181,7 +172,7 @@
   }
 
   .btn-ghost:hover {
-    @apply text-fiamma;
+    @apply text-brace-hi;
   }
 
   /* ── Überzeile: zweisprachig, mono ──────────────────────────────
@@ -189,7 +180,7 @@
      Hauses: kampanische Küche für ein Zürcher Publikum.              */
   .eyebrow {
     @apply inline-flex items-baseline gap-2 font-mono text-step--1
-           uppercase tracking-[0.2em] text-fiamma;
+           uppercase tracking-[0.2em] text-oliva-hi;
   }
 
   .eyebrow .eyebrow-de {
@@ -206,12 +197,12 @@
 
   /* ── Textlinks im Fliesstext ───────────────────────────────────── */
   .link {
-    @apply underline decoration-fiamma decoration-2 underline-offset-4
+    @apply underline decoration-brace-hi decoration-2 underline-offset-4
            transition-colors duration-150;
   }
 
   .link:hover {
-    @apply text-fiamma decoration-fiamma-soft;
+    @apply text-brace-hi decoration-brace;
   }
 
   .block-panna .link {
@@ -231,11 +222,11 @@
   }
 
   .chip:hover {
-    @apply border-fiamma/50 text-latte;
+    @apply border-brace-hi/60 text-latte;
   }
 
   .chip[aria-pressed="true"] {
-    @apply border-brace bg-brace text-latte;
+    @apply border-brace bg-brace text-brace-ink;
   }
 
   /* ── Redaktions-Typografie (Markdown aus dem CMS) ──────────────── */
@@ -262,11 +253,11 @@
   }
 
   .prose-gc ul {
-    @apply list-disc marker:text-brace;
+    @apply list-disc marker:text-brace-hi;
   }
 
   .prose-gc ol {
-    @apply list-decimal marker:font-mono marker:text-brace;
+    @apply list-decimal marker:font-mono marker:text-brace-hi;
   }
 
   .prose-gc a {
@@ -278,7 +269,7 @@
   }
 
   .prose-gc em {
-    @apply font-display italic text-latte;
+    @apply font-display italic text-brace-hi;
   }
 
   .prose-gc hr {
@@ -306,12 +297,12 @@
   @keyframes ember-breathe {
     0%,
     100% {
-      opacity: 0.55;
+      opacity: 0.5;
       transform: scale(1);
     }
     50% {
-      opacity: 0.9;
-      transform: scale(1.06);
+      opacity: 0.78;
+      transform: scale(1.05);
     }
   }
 

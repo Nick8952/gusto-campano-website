@@ -68,7 +68,7 @@ export default function MenuTeaser() {
 
       <Link
         href="/speisekarte/"
-        className="mt-6 inline-flex items-center gap-2 font-mono text-step--1 uppercase tracking-[0.14em] text-fiamma hover:text-fiamma-soft"
+        className="mt-6 inline-flex items-center gap-2 font-mono text-step--1 uppercase tracking-[0.14em] text-brace-hi hover:text-brace"
       >
         Ganze Karte mit Filter
         <IconArrowRight className="h-4 w-4" />

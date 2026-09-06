@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { nav, site } from "@/lib/site";
-import StampMark from "./StampMark";
+import PeakMark from "./PeakMark";
 import Wordmark from "./Wordmark";
 import { IconArrowUpRight, IconClose, IconMenu } from "./Icons";
 import { openStateFor } from "./openState";
@@ -53,7 +53,7 @@ export default function SiteHeader() {
     <>
       <a
         href="#inhalt"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-pill focus:bg-fiamma focus:px-5 focus:py-3 focus:font-semibold focus:text-fiamma-ink"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-pill focus:bg-brace focus:px-5 focus:py-3 focus:font-semibold focus:text-brace-ink"
       >
         Zum Inhalt springen
       </a>
@@ -81,8 +81,8 @@ export default function SiteHeader() {
                   <Link
                     href={item.href}
                     aria-current={isActive(item.href) ? "page" : undefined}
-                    className={`inline-flex min-h-[42px] items-center rounded-pill px-4 text-step--1 font-medium transition-colors duration-150 hover:text-fiamma ${
-                      isActive(item.href) ? "text-fiamma" : "text-latte-dim"
+                    className={`inline-flex min-h-[42px] items-center rounded-pill px-4 text-step--1 font-medium transition-colors duration-150 hover:text-brace-hi ${
+                      isActive(item.href) ? "text-brace-hi" : "text-latte-dim"
                     }`}
                   >
                     {item.label}
@@ -97,7 +97,7 @@ export default function SiteHeader() {
               <span className="hidden items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-latte-mute md:inline-flex">
                 <span
                   className={`h-1.5 w-1.5 rounded-full ${
-                    status.open ? "bg-oliva" : "bg-brace"
+                    status.open ? "bg-oliva" : "bg-brace-hi"
                   }`}
                   aria-hidden="true"
                 />
@@ -107,7 +107,7 @@ export default function SiteHeader() {
 
             <Link
               href={nav.ctaHref}
-              className="hidden items-center gap-1.5 rounded-pill bg-fiamma px-4 py-2.5 text-step--1 font-semibold text-fiamma-ink transition-all duration-200 ease-forno hover:-translate-y-0.5 hover:bg-fiamma-soft sm:inline-flex"
+              className="hidden items-center gap-1.5 rounded-pill bg-brace px-4 py-2.5 text-step--1 font-semibold text-brace-ink transition-all duration-200 ease-forno hover:-translate-y-0.5 hover:bg-[#93374b] sm:inline-flex"
             >
               {nav.ctaLabel}
               <IconArrowUpRight className="h-4 w-4" />
@@ -119,7 +119,7 @@ export default function SiteHeader() {
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? "Menü schliessen" : "Menü öffnen"}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-pill text-latte transition-colors hover:text-fiamma lg:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-pill text-latte transition-colors hover:text-brace-hi lg:hidden"
             >
               {open ? (
                 <IconClose className="h-6 w-6" />
@@ -136,8 +136,9 @@ export default function SiteHeader() {
           id="mobile-menu"
           className="fixed inset-0 z-40 flex flex-col overflow-hidden bg-carbone-deep pt-24 lg:hidden"
         >
-          <StampMark
-            className="pointer-events-none absolute -bottom-16 -right-16 h-72 w-72 opacity-[0.06]"
+          <PeakMark
+            className="pointer-events-none absolute -bottom-10 -right-10 h-64 w-64 text-latte opacity-[0.05]"
+            chili={false}
             title=""
           />
           <nav aria-label="Mobiles Hauptmenü" className="relative px-gutter">
@@ -146,7 +147,7 @@ export default function SiteHeader() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="block py-5 font-display text-step-3 text-latte hover:text-fiamma"
+                    className="block py-5 font-display text-step-3 text-latte hover:text-brace-hi"
                   >
                     {item.label}
                   </Link>
@@ -155,7 +156,7 @@ export default function SiteHeader() {
             </ul>
             <Link
               href={nav.ctaHref}
-              className="btn btn-fiamma mt-8 w-full"
+              className="btn btn-primary mt-8 w-full"
             >
               {nav.ctaLabel}
               <IconArrowUpRight className="h-4 w-4" />

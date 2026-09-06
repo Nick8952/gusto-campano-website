@@ -28,7 +28,7 @@ export default function Hours() {
           <span className="inline-flex items-center gap-2 font-mono text-[0.68rem] uppercase tracking-[0.12em] text-latte-dim">
             <span
               className={`h-1.5 w-1.5 rounded-full ${
-                status.open ? "bg-oliva" : "bg-brace"
+                status.open ? "bg-oliva" : "bg-brace-hi"
               }`}
               aria-hidden="true"
             />
@@ -42,7 +42,7 @@ export default function Hours() {
           <div
             key={h.day}
             className={`flex justify-between gap-4 py-2.5 text-step--1 ${
-              i === todayIdx ? "text-fiamma" : "text-latte-dim"
+              i === todayIdx ? "text-brace-hi" : "text-latte-dim"
             }`}
           >
             <dt className={i === todayIdx ? "font-semibold" : ""}>{h.day}</dt>
