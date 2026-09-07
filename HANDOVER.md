@@ -165,6 +165,36 @@ Seite) möchte, meldet sich – das ist eine kleine Erweiterung im Code.
 
 ---
 
+## 4b. Alternativ auf Vercel hosten (statt GitHub Pages)
+
+Die Seite läuft standardmässig auf GitHub Pages. Vercel geht genauso – die
+Konfiguration erkennt Vercel automatisch (kein Unterordner, richtige Domain).
+
+1. Auf <https://vercel.com> mit dem GitHub-Konto anmelden.
+2. **Add New… → Project** → Repository `Nick8952/gusto-campano-website`
+   importieren.
+3. **Framework Preset:** Next.js (wird erkannt). **Root Directory** `./`,
+   **Build & Output Settings** alle auf Standard lassen – nichts überschreiben.
+4. **Environment Variables:** keine nötig. (Optional, sobald die endgültige
+   Adresse feststeht: `SITE_ORIGIN` = `https://<deine-domain>` setzen, damit
+   die Canonical-/Sitemap-URLs stimmen.)
+5. **Deploy** – nach ~1 Minute live unter `…vercel.app`.
+
+Danach:
+
+- In [`public/admin/config.yml`](public/admin/config.yml) `site_url`,
+  `display_url` und `logo_url` auf die Vercel-Adresse ändern, committen.
+- GitHub Pages kann parallel weiterlaufen oder in
+  **Repo → Settings → Pages → Source: None** abgeschaltet werden.
+- Das CMS ändert sich nicht: es speichert weiterhin ins GitHub-Repo, und
+  Vercel baut bei jedem Commit automatisch neu.
+
+**Wichtig:** Wenn die Seite auf Vercel „komisch" (ohne Layout/Bilder) aussieht,
+läuft ein alter Build von vor dieser Konfiguration. In Vercel unter
+**Deployments** den neuesten Commit **Redeploy**en.
+
+---
+
 ## 5. Vor dem Go-Live
 
 - [ ] **Demo-Modus ausschalten:** CMS → Firmendaten → „Demo-Modus" auf AUS.
