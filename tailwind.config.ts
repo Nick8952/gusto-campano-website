@@ -34,17 +34,17 @@ const config: Config = {
         panna: "#ECDFC9", // heller Block (Zitat)
         "panna-hi": "#F6EEDD",
 
-        // ── Marke: Weinrot/Burgunder aus dem Logo («CAMPANO» + Peperoncino)
-        brace: "#7E2A3B", // Marken-/Handlungsfarbe, CTA-Flächen
-        "brace-hi": "#C0716B", // aufgehellt (Backstein-Rose), Schrift/Icons auf Dunkel
-        "brace-ink": "#F5E7DB", // Text auf brace-Flächen
+        // ── Marke: Weinrot aus dem Logo («CAMPANO» + Peperoncino)
+        brace: "#8A2A3E", // Marken-/Handlungsfarbe, CTA-Flächen
+        "brace-hi": "#C25A70", // aufgehellte Weinrose – Schrift/Icons auf Dunkel
+        "brace-ink": "#F7EBE1", // Text auf brace-Flächen
 
         // ── Zweitakzent: Salbeigrün aus dem Logo («GUSTO» + Vesuv)
         oliva: "#9CA98A", // Überzeilen, «vegetariana», Status-Punkt
-        "oliva-hi": "#BCC7A8", // aufgehellt für Text auf Dunkel
+        "oliva-hi": "#BEC9AA", // aufgehellt für Text auf Dunkel
 
-        // ── nur Ofen & Schärfe: warmer Glut-Ton
-        fiamma: "#C2593F", // Hero-Glut, Schärfe-Flammen, Fokusring
+        // ── nur der Ofen im Hero: warmer Glut-Ton (kommt sonst nicht vor)
+        fiamma: "#C2593F",
         "fiamma-soft": "#D98A66",
 
         // ── «mare / pesce»-Marker – gedämpftes Petrol, kein lautes Blau
@@ -92,7 +92,7 @@ const config: Config = {
       boxShadow: {
         forno: "0 2px 6px rgba(0,0,0,0.5), 0 30px 60px -28px rgba(0,0,0,0.85)",
         lift: "0 4px 10px rgba(0,0,0,0.55), 0 40px 80px -30px rgba(0,0,0,0.9)",
-        glow: "0 0 0 1px rgba(193,106,120,0.3), 0 18px 50px -18px rgba(126,42,59,0.5)",
+        glow: "0 0 0 1px rgba(194,90,112,0.32), 0 18px 50px -18px rgba(138,42,62,0.55)",
       },
       transitionTimingFunction: {
         forno: "cubic-bezier(0.2, 0.6, 0.2, 1)",

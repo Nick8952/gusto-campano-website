@@ -25,7 +25,7 @@ export default function HomeHero({ hero }: { hero: Hero }) {
           right: "-10vmin",
           bottom: "-6vmin",
           background:
-            "radial-gradient(circle, rgba(217,138,102,0.5), rgba(126,42,59,0.32) 42%, transparent 70%)",
+            "radial-gradient(circle, rgba(200,96,116,0.42), rgba(138,42,62,0.34) 44%, transparent 70%)",
         }}
       />
       {/* Lesbarkeit */}

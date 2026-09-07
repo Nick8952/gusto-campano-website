@@ -147,7 +147,7 @@
 
   .btn-primary:hover {
     @apply shadow-glow;
-    background: #93374b;
+    background: #a23349;
     transform: translateY(-2px);
   }
 

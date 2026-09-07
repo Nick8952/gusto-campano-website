@@ -107,7 +107,7 @@ export default function SiteHeader() {
 
             <Link
               href={nav.ctaHref}
-              className="hidden items-center gap-1.5 rounded-pill bg-brace px-4 py-2.5 text-step--1 font-semibold text-brace-ink transition-all duration-200 ease-forno hover:-translate-y-0.5 hover:bg-[#93374b] sm:inline-flex"
+              className="hidden items-center gap-1.5 rounded-pill bg-brace px-4 py-2.5 text-step--1 font-semibold text-brace-ink transition-all duration-200 ease-forno hover:-translate-y-0.5 hover:bg-[#a23349] sm:inline-flex"
             >
               {nav.ctaLabel}
               <IconArrowUpRight className="h-4 w-4" />
