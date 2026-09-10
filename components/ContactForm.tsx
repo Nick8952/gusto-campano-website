@@ -2,7 +2,7 @@ import { SITE_URL, site } from "@/lib/site";
 
 const field =
   "w-full rounded-card border border-crosta bg-carbone px-4 py-3 text-step-0 " +
-  "text-latte transition-colors duration-150 placeholder:text-latte-mute/50 " +
+  "text-latte transition-colors duration-150 placeholder:text-latte-mute/80 " +
   "hover:border-brace-hi/40 focus:border-brace-hi";
 
 const label = "block text-step--1 font-semibold text-latte";

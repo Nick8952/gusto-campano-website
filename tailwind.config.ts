@@ -28,7 +28,7 @@ const config: Config = {
         "carbone-deep": "#0D0807", // Hero, Fuss, tiefste Blöcke
         pietra: "#241813", // Karten, gehobene Flächen
         "pietra-hi": "#33241C", // Kartenkante, Hover
-        crosta: "#4A362B", // Trennlinien, Rahmen
+        crosta: "#5C4636", // Trennlinien, Rahmen, «carta»-Linien – sichtbar genug
 
         // ── warm-helle Punktierung (sparsam, für Rhythmus)
         panna: "#ECDFC9", // heller Block (Zitat)
@@ -52,8 +52,8 @@ const config: Config = {
 
         // ── Schrift auf dunklem Grund: Teig / Fior di Latte
         latte: "#F3E7D6",
-        "latte-dim": "#CBB9A0",
-        "latte-mute": "#A6927B",
+        "latte-dim": "#D0BFA6", // Fliesstext-Sekundär
+        "latte-mute": "#B3A084", // Kleinschrift/Captions – aufgehellt für Kontrast
       },
       fontFamily: {
         // Piazzolla – warmes, eigenwilliges Modern-Serif mit ausdrucksstarker

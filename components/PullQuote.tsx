@@ -21,7 +21,7 @@ export default function PullQuote({
         </span>
       </blockquote>
       {author ? (
-        <figcaption className="mt-5 font-mono text-[0.72rem] uppercase tracking-[0.18em] text-carbone/55">
+        <figcaption className="mt-5 font-mono text-[0.72rem] uppercase tracking-[0.18em] text-carbone/70">
           {author}
         </figcaption>
       ) : null}
