@@ -9,6 +9,7 @@ import MenuTeaser from "@/components/MenuTeaser";
 import GalleryWall from "@/components/GalleryWall";
 import PullQuote from "@/components/PullQuote";
 import Reveal from "@/components/Reveal";
+import CountUp from "@/components/CountUp";
 import about from "@/data/about.json";
 import { IconArrowRight, IconPhone } from "@/components/Icons";
 
@@ -53,7 +54,9 @@ export default function HomePage() {
                 />
               </div>
               <div className="absolute -bottom-5 -left-5 hidden rounded-card border border-crosta bg-carbone-deep p-4 sm:block">
-                <p className="font-mono text-step-1 text-brace-hi">48 h</p>
+                <p className="font-mono text-step-1 text-brace-hi">
+                  <CountUp value="48 h" />
+                </p>
                 <p className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-latte-mute">
                   Teigreifung
                 </p>

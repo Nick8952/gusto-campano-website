@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { img, site } from "@/lib/site";
 import type { Hero } from "@/lib/content";
+import CountUp from "./CountUp";
 import { IconArrowRight, IconPhone } from "./Icons";
 
 /**
@@ -70,9 +71,11 @@ export default function HomeHero({ hero }: { hero: Hero }) {
         </div>
 
         <dl className="mt-12 flex flex-wrap gap-x-10 gap-y-4 border-t-2 border-dotted border-crosta pt-6">
-          {site.facts.map((f) => (
+          {site.facts.map((f, i) => (
             <div key={f.label} className="flex items-baseline gap-2.5">
-              <dt className="font-mono text-step-1 text-brace-hi">{f.value}</dt>
+              <dt className="font-mono text-step-1 text-brace-hi">
+                <CountUp value={f.value} delay={0.15 + i * 0.12} />
+              </dt>
               <dd className="font-mono text-[0.72rem] uppercase tracking-[0.14em] text-latte-mute">
                 {f.label}
               </dd>
